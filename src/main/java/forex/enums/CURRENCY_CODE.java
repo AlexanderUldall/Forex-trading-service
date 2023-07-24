@@ -1,0 +1,33 @@
+package forex.enums;
+
+public enum CURRENCY_CODE {
+    AED,
+    AUD,
+    BGN,
+    CAD,
+    CHF,
+    CNH,
+    CZK,
+    DKK,
+    EUR,
+    GBP,
+    HKD,
+    HRK,
+    HUF,
+    ILS,
+    JPY,
+    MXN,
+    NOK,
+    NZD,
+    PLN,
+    RON,
+    RUB,
+    RSD,
+    SAR,
+    SEK,
+    SGD,
+    THB,
+    TRY,
+    USD,
+    ZAR
+}

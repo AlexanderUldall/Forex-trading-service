@@ -1,0 +1,9 @@
+/shelf/
+/workspace.xml
+.idea/*
+*.lst
+target/*
+*.yml
+mvnw
+mvnw.cmd
+.mvn

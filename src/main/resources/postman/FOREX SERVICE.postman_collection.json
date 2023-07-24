@@ -1,0 +1,417 @@
+{
+	"info": {
+		"_postman_id": "d2cf775a-219c-47a7-933a-b7aacaf0a4c0",
+		"name": "FOREX SERVICE",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Cutofftime - succes - today",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/cutoffTime?toCurrency=DKK&fromCurrency=EUR&dateOfConversion={{today_date}}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"cutoffTime"
+					],
+					"query": [
+						{
+							"key": "toCurrency",
+							"value": "DKK"
+						},
+						{
+							"key": "fromCurrency",
+							"value": "EUR"
+						},
+						{
+							"key": "dateOfConversion",
+							"value": "{{today_date}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Cutofftime - succes - tomorrow",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/cutoffTime?toCurrency=AED&fromCurrency=USD&dateOfConversion={{tomorrow_date}}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"cutoffTime"
+					],
+					"query": [
+						{
+							"key": "toCurrency",
+							"value": "AED"
+						},
+						{
+							"key": "fromCurrency",
+							"value": "USD"
+						},
+						{
+							"key": "dateOfConversion",
+							"value": "{{tomorrow_date}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Cutofftime - succes -  after tomorrow",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/cutoffTime?toCurrency=AED&fromCurrency=USD&dateOfConversion={{after_tomorrow_date}}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"cutoffTime"
+					],
+					"query": [
+						{
+							"key": "toCurrency",
+							"value": "AED"
+						},
+						{
+							"key": "fromCurrency",
+							"value": "USD"
+						},
+						{
+							"key": "dateOfConversion",
+							"value": "{{after_tomorrow_date}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Cutofftime -  succes - today  - trade not possible",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/cutoffTime?toCurrency=AUD&fromCurrency=BGN&dateOfConversion={{today_date}}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"cutoffTime"
+					],
+					"query": [
+						{
+							"key": "toCurrency",
+							"value": "AUD"
+						},
+						{
+							"key": "fromCurrency",
+							"value": "BGN"
+						},
+						{
+							"key": "dateOfConversion",
+							"value": "{{today_date}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Cutofftime -  bad request - missing currency",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/cutoffTime?dateOfConversion={{today_date}}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"cutoffTime"
+					],
+					"query": [
+						{
+							"key": "dateOfConversion",
+							"value": "{{today_date}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Cutofftime - bad request - same curency",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/cutoffTime?toCurrency=EUR&fromCurrency=EUR&dateOfConversion={{today_date}}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"cutoffTime"
+					],
+					"query": [
+						{
+							"key": "toCurrency",
+							"value": "EUR"
+						},
+						{
+							"key": "fromCurrency",
+							"value": "EUR"
+						},
+						{
+							"key": "dateOfConversion",
+							"value": "{{today_date}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Cutofftime -  bad request - yesterday",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/cutoffTime?toCurrency=DKK&fromCurrency=EUR&dateOfConversion={{yesterday_date}}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"cutoffTime"
+					],
+					"query": [
+						{
+							"key": "toCurrency",
+							"value": "DKK"
+						},
+						{
+							"key": "fromCurrency",
+							"value": "EUR"
+						},
+						{
+							"key": "dateOfConversion",
+							"value": "{{yesterday_date}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Cutofftime -  bad request - incorrect dateOfConversion format",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/cutoffTime?toCurrency=DKK&fromCurrency=EUR&dateOfConversion=2013-11-133",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"cutoffTime"
+					],
+					"query": [
+						{
+							"key": "toCurrency",
+							"value": "DKK"
+						},
+						{
+							"key": "fromCurrency",
+							"value": "EUR"
+						},
+						{
+							"key": "dateOfConversion",
+							"value": "2013-11-133"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					"const moment = require('moment');",
+					"pm.globals.set(\"yesterday_date\", moment().subtract(1,'days').format(\"yyyy-MM-DD\"));",
+					"pm.globals.set(\"today_date\", moment().format(\"yyyy-MM-DD\"));",
+					"pm.globals.set(\"tomorrow_date\", moment().add(1,'days').format(\"yyyy-MM-DD\"));",
+					"pm.globals.set(\"after_tomorrow_date\", moment().add(2,'days').format(\"yyyy-MM-DD\"));"
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
